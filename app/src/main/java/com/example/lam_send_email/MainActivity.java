@@ -9,7 +9,6 @@ import android.view.View;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class MainActivity extends AppCompatActivity {
-
     public static String MESSAGE = "";
 
     @Override
@@ -24,8 +23,9 @@ public class MainActivity extends AppCompatActivity {
         TextInputEditText toInput = findViewById(R.id.toInput);
         TextInputEditText messageInput = findViewById(R.id.messageInput);
 
-        MESSAGE = R.string.from + " " + fromInput + "\n" + R.string.to + " " + toInput + "\n" +
-                R.string.message + " " + messageInput;
+        MESSAGE = getString(R.string.from) + " " + fromInput.getText().toString() + "\n"
+                + getString(R.string.to) + " " + toInput.getText().toString() + "\n" +
+                getString(R.string.message) + " " + messageInput.getText().toString();
 
         startActivity(intent);
     }
